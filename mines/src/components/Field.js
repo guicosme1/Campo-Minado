@@ -22,7 +22,8 @@ export default props => {
     }
 
     return (
-        <TouchableWithoutFeedback onPress={props.onOpen}>
+        <TouchableWithoutFeedback onPress={props.onOpen}
+            onLongPress={props.onSelect}>
             <View style={stylefield}>
                 {!mined && opened && nearMines > 0 ?
                     <Text style={[styles.label, {color: color}]}>
@@ -41,18 +42,12 @@ const styles = StyleSheet.create({
         borderWidth: params.borderSize,
     },
     regular: {
-        backgroundColor: '#999',
-        borderLeftColor: '#CCC',
-        borderTopColor: '#CCC',
-        borderRightColor: '#333',
-        borderBottomColor: '#333',
+        backgroundColor: '#a1ff5e',
+        borderColor: '#619c38',
     },
     opened: {
-        backgroundColor: '#888',
-        borderLeftColor: '#333',
-        borderTopColor: '#333',
-        borderRightColor: '#CCC',
-        borderBottomColor: '#CCC',
+        backgroundColor: '#E3C29F',
+        borderColor: '#E3C29F',
         alignItems: 'center',
         justifyContent: 'center'
     },
